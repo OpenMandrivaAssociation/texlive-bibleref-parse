@@ -1,3 +1,9 @@
+# revision 22054
+# category Package
+# catalog-ctan /macros/latex/contrib/bibleref-parse
+# catalog-date 2011-04-11 08:43:57 +0200
+# catalog-license lppl1.3
+# catalog-version 1.1
 Name:		texlive-bibleref-parse
 Version:	1.1
 Release:	1
@@ -41,6 +47,7 @@ functionality of the bibleref package.
 %doc %{_texmfdistdir}/doc/latex/bibleref-parse/README
 %doc %{_texmfdistdir}/doc/latex/bibleref-parse/bibleref-parse.pdf
 %doc %{_texmfdistdir}/doc/latex/bibleref-parse/bibleref-parse.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -51,3 +58,5 @@ functionality of the bibleref package.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
