@@ -6,7 +6,7 @@
 # catalog-version 1.1
 Name:		texlive-bibleref-parse
 Version:	1.1
-Release:	7
+Release:	8
 Summary:	Specify Bible passages in human-readable format
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bibleref-parse
