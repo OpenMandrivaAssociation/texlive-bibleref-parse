@@ -1,18 +1,12 @@
-# revision 22054
-# category Package
-# catalog-ctan /macros/latex/contrib/bibleref-parse
-# catalog-date 2011-04-11 08:43:57 +0200
-# catalog-license lppl1.3
-# catalog-version 1.1
 Name:		texlive-bibleref-parse
-Version:	1.1
-Release:	11
+Version:	22054
+Release:	1
 Summary:	Specify Bible passages in human-readable format
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bibleref-parse
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.r22054.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.doc.r22054.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ allows for a simpler and more convenient interface to the
 functionality of the bibleref package.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -41,25 +35,10 @@ functionality of the bibleref package.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.1-2
-+ Revision: 749691
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
-+ Revision: 717937
-- texlive-bibleref-parse
-- texlive-bibleref-parse
-- texlive-bibleref-parse
-- texlive-bibleref-parse
-- texlive-bibleref-parse
-
