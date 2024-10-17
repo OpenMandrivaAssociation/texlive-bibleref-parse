@@ -3,7 +3,7 @@ Version:	22054
 Release:	2
 Summary:	Specify Bible passages in human-readable format
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bibleref-parse
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/bibleref-parse
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.doc.r%{version}.tar.xz
