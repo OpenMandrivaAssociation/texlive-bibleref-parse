@@ -1,44 +1,25 @@
-Name:		texlive-bibleref-parse
-Version:	22054
-Release:	2
+%global tl_name bibleref-parse
+%global tl_revision 22054
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.1
+Release:	%{tl_revision}.1
 Summary:	Specify Bible passages in human-readable format
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/bibleref-parse
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bibleref-parse.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package parses Bible passages that are given in human
-readable format. It accepts a wide variety of formats. This
-allows for a simpler and more convenient interface to the
-functionality of the bibleref package.
+The package parses Bible passages that are given in human readable
+format. It accepts a wide variety of formats. This allows for a simpler
+and more convenient interface to the functionality of the bibleref
+package.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/bibleref-parse/bibleref-parse.sty
-%doc %{_texmfdistdir}/doc/latex/bibleref-parse/README
-%doc %{_texmfdistdir}/doc/latex/bibleref-parse/bibleref-parse.pdf
-%doc %{_texmfdistdir}/doc/latex/bibleref-parse/bibleref-parse.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
